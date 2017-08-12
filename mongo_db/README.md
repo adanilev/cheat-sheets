@@ -1,5 +1,5 @@
 Just a cheat sheet for me while I'm learning stuff.. 
-Real documentation is (here)[https://docs.mongodb.com/manual/reference/method/]
+Real documentation is [here](https://docs.mongodb.com/manual/reference/method/)
 
 Start mongo
 ```
@@ -11,13 +11,13 @@ mongod --dbpath .
 
 ### Reads
 
-Count
+**Count**
 ```
 # SELECT COUNT(\*) FROM users;
 db.users.find({}).count();
 ```
 
-Find - Matching attributes. Returns objects
+**Find** - Matching attributes. Returns objects
 ```
 # SELECT * FROM users WHERE firstname = 'Steve';
 db.users.find({firstName:'Steve'});
@@ -30,13 +30,13 @@ db.users.find({age: {$gt: 21}}, {firstName: 1});
 db.users.find({}, {firstName: 0});
 ```
 
-Distinct - returns an array of the unique values of firstName
+**Distinct** - returns an array of the unique values of firstName
 ```
 # SELECT DISTINCT firstName FROM users;
 db.users.distinct('firstName');
 ```
 
-Sort and Limit - returns the oldest 5 users. -1 is descending order, 1 is ascending
+**Sort and Limit** - returns the oldest 5 users. -1 is descending order, 1 is ascending
 ```
 # SELECT \* FROM users ORDER BY age DESC LIMIT 5;
 db.users.find().sort({age:-1}).limit(5);
@@ -45,7 +45,7 @@ db.users.find().sort({age:-1}).limit(5);
 
 ### Update
 
-Update attributes of records matching a filter
+**Update** attributes of records matching a filter
 ```
 db.users.updateMany({userid:123},{$set:{"firstName": "Sally"}});
 ```
